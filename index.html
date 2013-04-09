@@ -21,6 +21,12 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/github.css">
 
+		<style>
+		  ul.extra li {
+  		  margin-bottom: .6em;
+		  }
+		</style>
+
 		<script>
 			// If the query includes 'print-pdf' we'll use the PDF print sheet
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -53,6 +59,96 @@
           </ul>
         </section>
 
+        <section>
+          <h2>Who are you?</h2>
+          <ul class="extra">
+            <li class="fragment">You are a developer who uses Sass and compass religiously</li>
+            <li class="fragment">You have used several compass extensions, to expedite development further</li>
+            <li class="fragment">You want to help develop the extensions you use, or have ideas on your own extensions</li>
+            <li class="fragment">You possibly make new sites or themes often, and you want to use a template for all your Compass projects.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What to do?</h2>
+          <h4>Build your own extensions!</h4>
+          <p>Compass has built a framework where you can easily extend the functionality of compass, and build your own mixins and functions to do anything!</p>
+
+          <h4 class="fragment" style="margin-top:2em;">... Okay... how?</h4>
+        </section>
+
+        <section>
+          <h2>Sass-y Code</h2>
+          <section>
+            <h3>Variables</h3>
+            <pre><code>
+$foo        : 'bar'   !default;
+            </code></pre>
+            <p>By adding a !default tag, the variable will only be set if it has not been set already</p>
+            <p>Use this within your extensions so variables can be set before or after the extension is called</p>
+          </section>
+          <section>
+            <h3>Functions</h3>
+            <pre><code contenteditable>
+@function addition($a, $b: 5) {
+
+}
+            </code></pre>
+          </section>
+          <section>
+            <h3>Fuller Mixins</h3>
+          </section>
+          <section>
+            <h3>Compass Provided Functions</h3>
+          </section>
+        </section>
+
+        <section>
+          <h2>Building that Extension</h2>
+
+          <section>
+            <h3>Template to Begin</h3>
+          </section>
+          <section>
+            <h3>Gemspec file</h3>
+          </section>
+          <section>
+            <h3>Stylesheets</h3>
+          </section>
+          <section>
+            <h3>Templates</h3>
+          </section>
+          <section>
+            <h3>Library</h3>
+          </section>
+        </section>
+
+        <section>
+          <h2>Testing and Deploying</h2>
+
+          <section>
+            <h3>Compiling and running locally</h3>
+          </section>
+          <section>
+            <h3>Submit to Ruby Gems</h3>
+          </section>
+        </section>
+
+        <section>
+          <h2>Weird Stuff</h2>
+
+          <section>
+            <h3>How / When to use Ruby</h3>
+          </section>
+        </section>
+
+        <section>
+          <h2>Helpful Links!</h2>
+          <ul class="extra">
+            <li><a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html">Sass Docs</a></li>
+            <li><a href="https://github.com/Team-Sass/">Team Sass Github page</a></li>
+          </ul>
+        </section>
 
 			</div>
 
