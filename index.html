@@ -88,18 +88,60 @@ $foo        : 'bar'   !default;
             <p>Use this within your extensions so variables can be set before or after the extension is called</p>
           </section>
           <section>
+            <h3>Variables</h3>
+            <ul class="extra">
+              <li>Number - With or without units (1, 2.5, 100px)</li>
+              <li>String - With or without quotes (apples, "oranges", 'mangos')</li>
+              <li>Boolean - true / false</li>
+              <li>Null - null</li>
+              <li>List - Any combination of those with spaces or commas. (1em 2em 3em / alpha, beta, gamma)</li>
+            </ul>
+          </section>
+          <section>
             <h3>Functions</h3>
             <pre><code contenteditable>
 @function addition($a, $b: 5) {
-
+  @return $a + $b;
 }
             </code></pre>
+            <p>All function have at least one parameter, and have a @return to return a value.</p>
+            <p>You can set defaults to each parameter.</p>
           </section>
           <section>
-            <h3>Fuller Mixins</h3>
+            <h3>Mixins</h3>
+            <pre><code contenteditable>
+@mixin right-to-left() {
+  html[dir="rtl"] & {
+    @content;
+  }
+}
+            </code></pre>
+            <p>Returns Sass code to be printed as CSS.</p>
+            <p>The @content represents all code within a curly bracket after the mixin is called.</p>
           </section>
           <section>
-            <h3>Compass Provided Functions</h3>
+            <h3>Sass Provided Functions</h3>
+            <p>Sass has numerous helper functions that can be found on their documentation. Examples:</p>
+            <ul>
+              <li><code>unquote($var) / quote($var)</code> Adds or removes quotes from a variable.</li>
+              <li><code>type-of($var)</code> Will return the type of the variable (e.g. number)</li>
+              <li><code>unit($var);</code> Returns the unit of a number (e.g. em)</li>
+              <li><code>join($list1, $list2);</code> Merges several lists together</li>
+              <li><code>nth($list, $n)</code> Will return the nth value in the $list.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Debugging</h3>
+            <p>@warn will display an error on the command prompt, but will not stop the file from compiling. This is just to alert the user they are doing behavior that isn't advised.</p>
+            <pre><code>
+@warn "This is an invalid response";
+            </code></pre>
+
+            <p>@debug displays similar to a warning, but just the debug message. Useful while coding.</p>
+            <pre><code>
+@debug "This is an invalid response" $variable;
+            </code></pre>
+
           </section>
         </section>
 
@@ -108,6 +150,8 @@ $foo        : 'bar'   !default;
 
           <section>
             <h3>Template to Begin</h3>
+            <p><a href="https://github.com/Team-Sass/">Team Sass</a> has already built an extension for you to start with. Copy the repo and begin.</p>
+            <p><a href="https://github.com/Team-Sass/Compass-Extension-Template">https://github.com/Team-Sass/Compass-Extension-Template</a></p>
           </section>
           <section>
             <h3>Gemspec file</h3>
@@ -146,6 +190,7 @@ $foo        : 'bar'   !default;
           <h2>Helpful Links!</h2>
           <ul class="extra">
             <li><a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html">Sass Docs</a></li>
+            <li><a href="http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html">Sass Provided Functions</a></li>
             <li><a href="https://github.com/Team-Sass/">Team Sass Github page</a></li>
           </ul>
         </section>
