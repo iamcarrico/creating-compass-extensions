@@ -155,15 +155,60 @@ $foo        : 'bar'   !default;
           </section>
           <section>
             <h3>Gemspec file</h3>
+            <p>The .gemspec file contains all the information rubygems.org and the system needs to ensure your gem gets installed properly.</p>
+            <p>The template has all the fields you need to fill in: the name of the gem, a description, etc.</p>
           </section>
           <section>
             <h3>Stylesheets</h3>
+            <p>Compass will allow a Sass file to be pulled into a project when it is within the "stylesheets" directory.</p>
+            <p>Make sure the stylesheet is the same name as your extension, then you can do a normal include into your project</p>
+            <code><pre>@import 'example';</pre></code>
+          </section>
+          <section>
+            <h3>Stylesheets</h3>
+            <p>Within your stylesheets you can include your own mixins, functions, and other partials to perform any functionality you are looking for.</p>
+            <p>Extensions like <a href="https://github.com/Team-Sass/breakpoint">breakpoint</a>, <a href="https://github.com/Team-Sass/Singularity">singularity</a>, and <a href="https://github.com/Team-Sass/toolkit">toolkit</a> all are built on these stylesheets.</p>
           </section>
           <section>
             <h3>Templates</h3>
+            <p>One of Compass's best features is to be able to create a template to start a theme from. The <a href="http://drupal.org/project/aurora">Aurora theme</a> is a great example of this.</p>
+            <p>To create a template, within the "templates" folder create a folder named "project". This folder should contain all of your files you want within the template, as well as a "manifest.rb" file. The manifest file will allow you to say where each file should go to, as well as mark some to include variable names.</p>
+          </section>
+          <section>
+            <h3>Templates</h3>
+            <p>Example manifest.rb file</p>
+            <code><pre>
+description "My Little Template"
+file '../shared/template.php.erb', :to => "template.php", :erb => true
+
+# Stylesheets
+file 'style.scss',  :like => :stylesheet, :media => 'screen, projection', :to => 'style.scss'
+
+# JavaScript
+file '../shared/hammer.js', :like => :javascript, :to => 'hammer.js'
+
+help %Q{
+  You need help, contact the helpline!
+}
+welcome_message %Q{
+  This is a welcome message!
+}            </pre></code>
           </section>
           <section>
             <h3>Library</h3>
+            <p>Within the lib folder is the ruby file that registers your gem with compass, and may contain some ruby code, if you need it.</p>
+            <code><pre>
+require 'compass'
+
+extension_path = File.expand_path(File.join(File.dirname(__FILE__), ".."))
+Compass::Frameworks.register('example', :path => extension_path)
+
+
+module Example
+  VERSION = "1.0"
+  DATE = "2013-03-10"
+end
+            </pre></code>
           </section>
         </section>
 
