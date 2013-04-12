@@ -217,9 +217,23 @@ end
 
           <section>
             <h3>Compiling and running locally</h3>
+            <p>You can build and install your gem locally with just two commands:</p>
+            <code><pre>
+gem build {your-gem-name}.gemspec
+sudo gem install {your-gem-name}-{version-#}.gem
+            </pre></code>
+            <p>That's it! Your gem is installed locally, and you can test it!</p>
           </section>
           <section>
             <h3>Submit to Ruby Gems</h3>
+            <p>Once you have an account on rubygems.org, you can publish your gem easily with just:</p>
+            <code><pre>
+gem push {your-gem-name}-{version-#}.gem
+            </pre></code>
+            <p>Your gem is now pushed, and can be installed by anybody with:</p>
+            <code><pre>
+sudo gem install {your-gem-name}
+            </pre></code>
           </section>
         </section>
 
