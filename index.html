@@ -242,6 +242,21 @@ sudo gem install {your-gem-name}
 
           <section>
             <h3>How / When to use Ruby</h3>
+            <p>Sometimes... Sass can't do what you want it to do.</p>
+            <h4 class="fragment">BUT RUBY CAN!</h4>
+            <p class="fragment">You can code your own extension to the objects that Sass has laid out. This is mainly useful for building functions that need Ruby-code to do what you need.</p>
+          </section>
+          <section>
+            <h3>Ruby Examples</h3>
+            <p>From Breakpoint:</p>
+            <pre><code>
+module Sass::Script::Functions
+  def is_breakpoint_list(breakpoint)
+    result = false unless breakpoint.class == Sass::Script::List && breakpoint.separator.to_s == 'comma'
+    Sass::Script::Bool.new(result)
+  end
+end
+            </code></pre>
           </section>
         </section>
 
