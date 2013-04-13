@@ -83,7 +83,7 @@
             <h3>Variables</h3>
             <pre><code>
 $foo        : 'bar'   !default;
-            </code></pre>
+            </pre></code>
             <p>By adding a !default tag, the variable will only be set if it has not been set already</p>
             <p>Use this within your extensions so variables can be set before or after the extension is called</p>
           </section>
@@ -103,7 +103,7 @@ $foo        : 'bar'   !default;
 @function addition($a, $b: 5) {
   @return $a + $b;
 }
-            </code></pre>
+            </pre></code>
             <p>All function have at least one parameter, and have a @return to return a value.</p>
             <p>You can set defaults to each parameter.</p>
           </section>
@@ -115,7 +115,7 @@ $foo        : 'bar'   !default;
     @content;
   }
 }
-            </code></pre>
+            </pre></code>
             <p>Returns Sass code to be printed as CSS.</p>
             <p>The @content represents all code within a curly bracket after the mixin is called.</p>
           </section>
@@ -135,12 +135,12 @@ $foo        : 'bar'   !default;
             <p>@warn will display an error on the command prompt, but will not stop the file from compiling. This is just to alert the user they are doing behavior that isn't advised.</p>
             <pre><code>
 @warn "This is an invalid response";
-            </code></pre>
+            </pre></code>
 
             <p>@debug displays similar to a warning, but just the debug message. Useful while coding.</p>
             <pre><code>
 @debug "This is an invalid response" $variable;
-            </code></pre>
+            </pre></code>
 
           </section>
         </section>
@@ -162,7 +162,7 @@ $foo        : 'bar'   !default;
             <h3>Stylesheets</h3>
             <p>Compass will allow a Sass file to be pulled into a project when it is within the "stylesheets" directory.</p>
             <p>Make sure the stylesheet is the same name as your extension, then you can do a normal include into your project</p>
-            <code><pre>@import 'example';</pre></code>
+            <pre><code>@import 'example';</pre></code>
           </section>
           <section>
             <h3>Stylesheets</h3>
@@ -177,7 +177,7 @@ $foo        : 'bar'   !default;
           <section>
             <h3>Templates</h3>
             <p>Example manifest.rb file</p>
-            <code><pre>
+            <pre><code>
 description "My Little Template"
 file '../shared/template.php.erb', :to => "template.php", :erb => true
 
@@ -197,7 +197,7 @@ welcome_message %Q{
           <section>
             <h3>Library</h3>
             <p>Within the lib folder is the ruby file that registers your gem with compass, and may contain some ruby code, if you need it.</p>
-            <code><pre>
+            <pre><code>
 require 'compass'
 
 extension_path = File.expand_path(File.join(File.dirname(__FILE__), ".."))
@@ -218,7 +218,7 @@ end
           <section>
             <h3>Compiling and running locally</h3>
             <p>You can build and install your gem locally with just two commands:</p>
-            <code><pre>
+            <pre><code>
 gem build {your-gem-name}.gemspec
 sudo gem install {your-gem-name}-{version-#}.gem
             </pre></code>
@@ -227,11 +227,11 @@ sudo gem install {your-gem-name}-{version-#}.gem
           <section>
             <h3>Submit to Ruby Gems</h3>
             <p>Once you have an account on rubygems.org, you can publish your gem easily with just:</p>
-            <code><pre>
+            <pre><code>
 gem push {your-gem-name}-{version-#}.gem
             </pre></code>
             <p>Your gem is now pushed, and can be installed by anybody with:</p>
-            <code><pre>
+            <pre><code>
 sudo gem install {your-gem-name}
             </pre></code>
           </section>
@@ -256,7 +256,7 @@ module Sass::Script::Functions
     Sass::Script::Bool.new(result)
   end
 end
-            </code></pre>
+            </pre></code>
           </section>
         </section>
 
